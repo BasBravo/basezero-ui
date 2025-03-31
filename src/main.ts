@@ -1,19 +1,15 @@
-import "./assets/main.css";
+import { createApp } from 'vue'
+import App from './App.vue'
+import ZButton from './components/ZButton.vue'
 
-import { createApp } from "vue";
-import { createRouter, createWebHistory } from "vue-router";
-import uiPlugin from "@nuxt/ui/vue-plugin";
+// Importar estilos base
+import './style.css'
 
-import App from "./App.vue";
+// Crear aplicación Vue
+const app = createApp(App)
 
-const app = createApp(App);
+// Registrar componentes
+app.component('ZButton', ZButton)
 
-const router = createRouter({
-  routes: [],
-  history: createWebHistory(),
-});
-
-app.use(uiPlugin);
-app.use(router);
-
-app.mount("#app");
+// Montar la aplicación
+app.mount('#app')

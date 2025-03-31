@@ -1,12 +1,24 @@
 {
-  "name": "nuxt-ui3-vue",
+  "name": "basezero-ui",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.1.0",
   "type": "module",
+  "main": "dist/basezero-ui.umd.js",
+  "module": "dist/basezero-ui.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/basezero-ui.es.js",
+      "require": "./dist/basezero-ui.umd.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --force",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "postinstall": "npm install -D autoprefixer"
   },
   "dependencies": {
     "@nuxt/ui": "^3.0.2",
@@ -15,6 +27,8 @@
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.2.1",
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.4.35",
     "typescript": "^5.8.2",
     "vite": "^6.2.4",
     "vue-tsc": "^2.2.0"
